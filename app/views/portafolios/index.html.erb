@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Portafolios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Archivo</th>
+      <th>Descripcion</th>
+      <th>Titulado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @portafolios.each do |portafolio| %>
+      <tr>
+        <td><%= portafolio.nombre %></td>
+        <td><%= portafolio.archivo %></td>
+        <td><%= portafolio.descripcion %></td>
+        <td><%= portafolio.titulado %></td>
+        <td><%= link_to 'Show', portafolio %></td>
+        <td><%= link_to 'Edit', edit_portafolio_path(portafolio) %></td>
+        <td><%= link_to 'Destroy', portafolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Portafolio', new_portafolio_path %>
